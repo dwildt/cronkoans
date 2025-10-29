@@ -1,0 +1,57 @@
+title: "Step Values - Using Intervals"
+description: "Learn to use step values (*/n) to run tasks at regular intervals"
+koans:
+  - id: "steps_1"
+    description: "Every 5 minutes"
+    question: "Run every 5 minutes"
+    incomplete: "__  * * * *"
+    answer: "*/5"
+    hints:
+      - "The step operator is */n where n is the interval"
+      - "To run every 5 minutes, use */5"
+      - "This goes in the minute field"
+    explanation: "*/5 in the minute field means 'every 5 minutes'. This will run at 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, and 55 minutes past each hour."
+
+  - id: "steps_2"
+    description: "Every 2 hours"
+    question: "At minute 0 of every 2nd hour"
+    incomplete: "0 __ * * *"
+    answer: "*/2"
+    hints:
+      - "The step value */n divides the field range into intervals"
+      - "For every 2 hours, use */2"
+      - "Place this in the hour field"
+    explanation: "*/2 in the hour field means 'every 2 hours'. This runs at 0:00, 2:00, 4:00, 6:00, 8:00, 10:00, 12:00, 14:00, 16:00, 18:00, 20:00, and 22:00."
+
+  - id: "steps_3"
+    description: "Every 15 minutes"
+    question: "Run every 15 minutes"
+    incomplete: "__ * * * *"
+    answer: "*/15"
+    hints:
+      - "15 divides evenly into 60 (minutes in an hour)"
+      - "Use */15 for every 15 minutes"
+      - "This is commonly used for frequent tasks"
+    explanation: "*/15 means every 15 minutes. This runs at :00, :15, :30, and :45 past each hour. It's a common interval for monitoring tasks."
+
+  - id: "steps_4"
+    description: "Every 3 days"
+    question: "At midnight every 3rd day"
+    incomplete: "0 0 __ * *"
+    answer: "*/3"
+    hints:
+      - "The step operator works on any field"
+      - "For every 3 days, use */3"
+      - "Place this in the day of month field"
+    explanation: "*/3 in the day of month field means every 3rd day: 1st, 4th, 7th, 10th, 13th, 16th, 19th, 22nd, 25th, and 28th of each month."
+
+  - id: "steps_5"
+    description: "Every 10 minutes"
+    question: "Run every 10 minutes"
+    incomplete: "__ * * * *"
+    answer: "*/10"
+    hints:
+      - "10 is a common interval for moderate-frequency tasks"
+      - "Use */10"
+      - "This runs 6 times per hour"
+    explanation: "*/10 means every 10 minutes: :00, :10, :20, :30, :40, :50. This is useful for tasks that need regular but not constant monitoring."

@@ -1,0 +1,46 @@
+title: "Wildcards - Using the Asterisk"
+description: "Master the use of * to mean 'every' value in cron fields"
+koans:
+  - id: "wildcards_1"
+    description: "Every hour at minute 0"
+    question: "At the start of every hour (XX:00)"
+    incomplete: "0 __ * * *"
+    answer: "*"
+    hints:
+      - "We want this to run every hour, not just one specific hour"
+      - "The asterisk (*) means 'every' value"
+      - "Use * in the hour field"
+    explanation: "Using * in the hour field means 'every hour'. Combined with 0 in the minute field, this runs at the start of each hour (1:00, 2:00, 3:00, etc.)."
+
+  - id: "wildcards_2"
+    description: "Every day at noon"
+    question: "At 12:00 PM every day"
+    incomplete: "0 12 __ * *"
+    answer: "*"
+    hints:
+      - "We want this to run every day, not just one specific day"
+      - "Use * to match every day of the month"
+      - "The answer is *"
+    explanation: "The * in the day of month field means 'every day'. This will run at noon (12:00) every single day of the month."
+
+  - id: "wildcards_3"
+    description: "Every month on the 15th"
+    question: "At midnight on the 15th of every month"
+    incomplete: "0 0 15 __ *"
+    answer: "*"
+    hints:
+      - "We want this to run in every month"
+      - "Use * for all months"
+      - "The answer is *"
+    explanation: "Using * in the month field means 'every month'. This will run on the 15th day of every month at midnight."
+
+  - id: "wildcards_4"
+    description: "Understanding day of week wildcard"
+    question: "At 9:00 AM every day (using day of week)"
+    incomplete: "0 9 * * __"
+    answer: "*"
+    hints:
+      - "Day of week: 0-7 (both 0 and 7 represent Sunday)"
+      - "To run every day of the week, use *"
+      - "The answer is *"
+    explanation: "The * in the day of week field means 'every day of the week'. This combined with * in day of month runs every single day at 9:00 AM."

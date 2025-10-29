@@ -1,0 +1,46 @@
+title: "Ranges - Using Dashes"
+description: "Learn to specify ranges of values using the dash (-) operator"
+koans:
+  - id: "ranges_1"
+    description: "Business hours"
+    question: "At minute 0 of every hour from 9 AM to 5 PM"
+    incomplete: "0 __ * * *"
+    answer: "9-17"
+    hints:
+      - "Business hours typically mean 9 AM to 5 PM"
+      - "In 24-hour format: 9 AM = 9, 5 PM = 17"
+      - "Use 9-17 to specify the range"
+    explanation: "The dash creates a range. 9-17 means hours 9 through 17 inclusive (9 AM to 5 PM). The task runs at the start of each hour in this range."
+
+  - id: "ranges_2"
+    description: "Weekdays only"
+    question: "At 8:00 AM on weekdays (Monday-Friday)"
+    incomplete: "0 8 * * __"
+    answer: "1-5"
+    hints:
+      - "Day of week: 0=Sunday, 1=Monday, 2=Tuesday, ..., 6=Saturday"
+      - "Monday is 1, Friday is 5"
+      - "Use 1-5 for Monday through Friday"
+    explanation: "In the day of week field, 1=Monday and 5=Friday. The range 1-5 covers all weekdays (Monday through Friday)."
+
+  - id: "ranges_3"
+    description: "First week of month"
+    question: "At midnight during the first 7 days of every month"
+    incomplete: "0 0 __ * *"
+    answer: "1-7"
+    hints:
+      - "Days of month range from 1 to 31"
+      - "First 7 days means days 1 through 7"
+      - "Use 1-7"
+    explanation: "The range 1-7 in the day of month field specifies the first week of every month."
+
+  - id: "ranges_4"
+    description: "Summer months"
+    question: "At noon on the 1st of every summer month (June, July, August)"
+    incomplete: "0 12 1 __ *"
+    answer: "6-8"
+    hints:
+      - "Months: 1=Jan, 2=Feb, 3=Mar, 4=Apr, 5=May, 6=Jun, 7=Jul, 8=Aug, ..."
+      - "Summer in Northern Hemisphere: June (6), July (7), August (8)"
+      - "Use 6-8"
+    explanation: "Months are numbered 1-12. June=6, July=7, August=8. The range 6-8 covers the summer months."

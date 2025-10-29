@@ -1,0 +1,57 @@
+title: "Common Patterns - Real World Examples"
+description: "Apply your knowledge to common real-world scheduling scenarios"
+koans:
+  - id: "patterns_1"
+    description: "Database backup"
+    question: "Run database backup at 2:30 AM every day"
+    incomplete: "30 __ * * *"
+    answer: "2"
+    hints:
+      - "This needs to run at 2:30 AM - the minute is already set to 30"
+      - "2:30 AM is hour 2 in 24-hour format"
+      - "Use 2 for the hour field"
+    explanation: "Database backups often run during low-traffic hours. '30 2 * * *' runs at 2:30 AM every day, typically when system usage is minimal."
+
+  - id: "patterns_2"
+    description: "Log rotation"
+    question: "Rotate logs every Sunday at 3 AM"
+    incomplete: "0 3 * * __"
+    answer: "0"
+    hints:
+      - "Sunday is represented by 0 (or 7) in the day of week field"
+      - "Use 0 for Sunday"
+      - "The full expression is: 0 3 * * 0"
+    explanation: "Log rotation is often done weekly. '0 3 * * 0' runs at 3:00 AM every Sunday, cleaning up logs after a full week."
+
+  - id: "patterns_3"
+    description: "System health check"
+    question: "Check system health every 5 minutes during business hours (9 AM - 5 PM, weekdays)"
+    incomplete: "__ 9-17 * * 1-5"
+    answer: "*/5"
+    hints:
+      - "Every 5 minutes means using a step value"
+      - "Use */5 in the minute field"
+      - "The range and weekday filters are already set"
+    explanation: "Health checks during business hours: '*/5 9-17 * * 1-5'. Runs every 5 minutes, only during hours 9-17 (9 AM-5 PM), only on weekdays (Mon-Fri)."
+
+  - id: "patterns_4"
+    description: "Monthly report"
+    question: "Generate monthly sales report at 6 AM on the first day of each month"
+    incomplete: "0 6 __ * *"
+    answer: "1"
+    hints:
+      - "First day of the month is day 1"
+      - "Put 1 in the day of month field"
+      - "The time is already set to 6 AM"
+    explanation: "Monthly reports typically run on the first: '0 6 1 * *'. This runs at 6:00 AM on the 1st of every month, giving time for the report to be ready for business hours."
+
+  - id: "patterns_5"
+    description: "Cache clearing"
+    question: "Clear cache at midnight, noon, and 6 PM every day"
+    incomplete: "0 __ * * *"
+    answer: "0,12,18"
+    hints:
+      - "Three times: midnight (0), noon (12), 6 PM (18)"
+      - "Use a comma-separated list"
+      - "Answer: 0,12,18"
+    explanation: "Regular cache clearing: '0 0,12,18 * * *'. Runs at 00:00, 12:00, and 18:00 daily, keeping the cache fresh throughout the day."

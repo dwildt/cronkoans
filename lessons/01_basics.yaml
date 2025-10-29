@@ -1,0 +1,57 @@
+title: "Basics - Understanding Cron Fields"
+description: "Learn the fundamental structure of cron expressions with 5 fields"
+koans:
+  - id: "basics_1"
+    description: "Understanding the five fields"
+    question: "Every minute of every day"
+    incomplete: "__ * * * *"
+    answer: "*"
+    hints:
+      - "Cron has 5 fields: minute, hour, day-of-month, month, day-of-week"
+      - "The asterisk (*) means 'every' or 'any' value"
+      - "For every minute, use * in the minute field (first position)"
+    explanation: "A cron expression has 5 fields: minute (0-59), hour (0-23), day of month (1-31), month (1-12), and day of week (0-7). The * means 'every' value."
+
+  - id: "basics_2"
+    description: "Setting a specific minute"
+    question: "At 30 minutes past every hour"
+    incomplete: "__ * * * *"
+    answer: "30"
+    hints:
+      - "The first field is the minute field (0-59)"
+      - "To run at a specific minute, use that number"
+      - "For 30 minutes past the hour, use 30"
+    explanation: "The minute field accepts values 0-59. Setting it to 30 means the task runs at 30 minutes past every hour."
+
+  - id: "basics_3"
+    description: "Setting a specific hour"
+    question: "At midnight (00:00) every day"
+    incomplete: "0 __ * * *"
+    answer: "0"
+    hints:
+      - "The second field is the hour field (0-23)"
+      - "Midnight is hour 0 in 24-hour format"
+      - "Use 0 for midnight"
+    explanation: "The hour field uses 24-hour format (0-23). Hour 0 represents midnight, hour 12 is noon, and hour 23 is 11 PM."
+
+  - id: "basics_4"
+    description: "Setting a specific day of month"
+    question: "At midnight on the 1st day of every month"
+    incomplete: "0 0 __ * *"
+    answer: "1"
+    hints:
+      - "The third field is the day of month (1-31)"
+      - "Days are numbered starting from 1"
+      - "Use 1 for the first day of the month"
+    explanation: "The day of month field accepts values 1-31. This sets when in the month the task should run."
+
+  - id: "basics_5"
+    description: "Setting a specific month"
+    question: "At midnight on January 1st every year"
+    incomplete: "0 0 1 __ *"
+    answer: "1"
+    hints:
+      - "The fourth field is the month (1-12)"
+      - "Months are numbered: 1=January, 2=February, etc."
+      - "Use 1 for January"
+    explanation: "The month field accepts values 1-12, where 1 is January and 12 is December."

@@ -1,0 +1,46 @@
+title: "Lists - Using Commas"
+description: "Learn to specify multiple specific values using comma-separated lists"
+koans:
+  - id: "lists_1"
+    description: "Weekend days"
+    question: "At midnight on Saturday and Sunday"
+    incomplete: "0 0 * * __"
+    answer: "0,6"
+    hints:
+      - "Day of week: 0=Sunday, 6=Saturday"
+      - "Use commas to separate multiple values"
+      - "Answer: 0,6 or 6,0 (order doesn't matter)"
+    explanation: "Commas create a list of specific values. 0,6 means Sunday (0) and Saturday (6). This runs at midnight on both weekend days."
+
+  - id: "lists_2"
+    description: "Meal times"
+    question: "At 7 AM, 12 PM, and 6 PM daily"
+    incomplete: "0 __ * * *"
+    answer: "7,12,18"
+    hints:
+      - "Convert to 24-hour: 7 AM=7, 12 PM=12, 6 PM=18"
+      - "List them with commas"
+      - "Answer: 7,12,18"
+    explanation: "7,12,18 specifies three specific hours. This is useful for tasks that should run at specific times like meal times or shift changes."
+
+  - id: "lists_3"
+    description: "Quarterly on the first"
+    question: "At midnight on the 1st of Jan, Apr, Jul, Oct"
+    incomplete: "0 0 1 __ *"
+    answer: "1,4,7,10"
+    hints:
+      - "Quarterly means every 3 months"
+      - "Jan=1, Apr=4, Jul=7, Oct=10"
+      - "List all four months: 1,4,7,10"
+    explanation: "1,4,7,10 specifies the first month of each quarter. This is common for quarterly reports, billing cycles, or seasonal tasks."
+
+  - id: "lists_4"
+    description: "Every 15 minutes using a list"
+    question: "At 0, 15, 30, and 45 minutes past every hour"
+    incomplete: "__ * * * *"
+    answer: "0,15,30,45"
+    hints:
+      - "List each minute explicitly: 0, 15, 30, 45"
+      - "Separate with commas"
+      - "This is equivalent to */15 but more explicit"
+    explanation: "0,15,30,45 lists each specific minute. While */15 achieves the same result, explicit lists make the schedule clearer for irregular intervals."

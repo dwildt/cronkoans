@@ -1,0 +1,57 @@
+title: "Special Strings - Shortcuts"
+description: "Learn the special time specification strings for common schedules"
+koans:
+  - id: "special_1"
+    description: "Daily at midnight"
+    question: "Run once a day at midnight (shortcut)"
+    incomplete: "__"
+    answer: "@daily"
+    hints:
+      - "Special strings start with @"
+      - "For once per day at midnight, use @daily or @midnight"
+      - "Both @daily and @midnight are equivalent to: 0 0 * * *"
+    explanation: "@daily (or @midnight) is a shortcut for '0 0 * * *', running once per day at midnight. These special strings make cron schedules more readable."
+
+  - id: "special_2"
+    description: "Every hour"
+    question: "Run once per hour at the start of the hour"
+    incomplete: "__"
+    answer: "@hourly"
+    hints:
+      - "There's a special string for hourly execution"
+      - "Use @hourly"
+      - "@hourly is equivalent to: 0 * * * *"
+    explanation: "@hourly is shorthand for '0 * * * *', running at the start of every hour (XX:00). It's clearer than remembering the asterisk pattern."
+
+  - id: "special_3"
+    description: "Weekly on Sunday"
+    question: "Run once per week on Sunday at midnight"
+    incomplete: "__"
+    answer: "@weekly"
+    hints:
+      - "Use the @weekly special string"
+      - "@weekly runs on Sunday at midnight"
+      - "Equivalent to: 0 0 * * 0"
+    explanation: "@weekly runs once per week on Sunday at midnight. It's equivalent to '0 0 * * 0'. This is useful for weekly cleanup or reporting tasks."
+
+  - id: "special_4"
+    description: "Monthly on the first"
+    question: "Run once per month on the 1st at midnight"
+    incomplete: "__"
+    answer: "@monthly"
+    hints:
+      - "There's a @monthly shortcut"
+      - "It runs on the first day of each month"
+      - "Equivalent to: 0 0 1 * *"
+    explanation: "@monthly is shorthand for '0 0 1 * *', running at midnight on the first day of each month. Perfect for monthly billing or reports."
+
+  - id: "special_5"
+    description: "Yearly on New Year"
+    question: "Run once per year on January 1st at midnight"
+    incomplete: "__"
+    answer: "@yearly"
+    hints:
+      - "Use @yearly or @annually"
+      - "Both are identical shortcuts"
+      - "Equivalent to: 0 0 1 1 *"
+    explanation: "@yearly (or @annually) runs once per year at midnight on January 1st. It's equivalent to '0 0 1 1 *'. Useful for annual maintenance tasks."

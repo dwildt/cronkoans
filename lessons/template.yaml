@@ -1,0 +1,55 @@
+# Template for Creating New Cron Koans Lessons
+# Copy this file and rename it with a number prefix (e.g., 09_my_lesson.yaml)
+# Fill in the fields below with your lesson content
+
+title: "Lesson Title - Brief Topic Description"
+description: "A longer description of what this lesson teaches the learner"
+
+koans:
+  # Each lesson should have 3-5 koans
+  # Each koan teaches one specific concept
+
+  - id: "unique_lesson_id_1"
+    description: "Brief description of what this koan teaches"
+    question: "The task or schedule to implement in plain English"
+    incomplete: "__ * * * *"  # Use __ for the blank that learners fill in
+    answer: "*/5"              # The correct answer
+    hints:
+      - "First hint: General direction"
+      - "Second hint: More specific guidance"
+      - "Third hint: Almost gives it away"
+    explanation: "Detailed explanation of the answer and why it works. Include what the full cron expression means."
+
+  - id: "unique_lesson_id_2"
+    description: "Another concept"
+    question: "Another scheduling task"
+    incomplete: "0 __ * * *"
+    answer: "9"
+    hints:
+      - "Hint about the hour field"
+      - "More specific hint"
+      - "Very specific hint"
+    explanation: "Explain the full expression and concept."
+
+  - id: "unique_lesson_id_3"
+    description: "Third concept"
+    question: "Third scheduling scenario"
+    incomplete: "0 0 * * __"
+    answer: "1-5"
+    hints:
+      - "General hint"
+      - "Specific hint"
+      - "Almost the answer"
+    explanation: "Full explanation of the cron expression."
+
+# Tips for creating great koans:
+# 1. Each koan should teach ONE concept
+# 2. Progress from simple to complex within the lesson
+# 3. Use real-world scenarios in questions
+# 4. Provide 3 hints of increasing specificity
+# 5. Explanations should be educational, not just "correct"
+# 6. Test your expressions at https://crontab.guru
+# 7. Ensure IDs are unique across all lessons
+# 8. Keep questions clear and concise
+# 9. Make sure the incomplete expression has exactly one __
+# 10. Validate that your answer creates a valid cron expression
